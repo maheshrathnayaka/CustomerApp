@@ -23,6 +23,30 @@ public class CustomerOrderLineEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private int lineNo;
+
+    public int getLineNo() {
+        return lineNo;
+    }
+
+    public void setLineNo(int lineNo) {
+        this.lineNo = lineNo;
+    }
+
+    public int getPartNo() {
+        return partNo;
+    }
+
+    public void setPartNo(int partNo) {
+        this.partNo = partNo;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
     private int partNo;
     private double amount;
     
@@ -58,5 +82,4 @@ public class CustomerOrderLineEntity implements Serializable {
     public String toString() {
         return "ejb.CustomerOrderLineEntity[ id=" + id + " ]";
     }
-    
 }

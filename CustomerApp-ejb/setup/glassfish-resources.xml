@@ -11,4 +11,19 @@
         <property name="driverClass" value="org.apache.derby.jdbc.ClientDriver"/>
     </jdbc-connection-pool>
     <jdbc-resource enabled="true" jndi-name="CustomerDB" object-type="user" pool-name="derby_net_CustomerDB_rootPool"/>
+    <admin-object-resource enabled="true" jndi-name="jms/NewCustomer"  res-type="javax.jms.Queue"  res-adapter="jmsra">
+        <property name="Name" value="PhysicalQueue"/>
+    </admin-object-resource>
+    <connector-connection-pool name="jms/NewCustomerFactoryPool"  connection-definition-name="javax.jms.QueueConnectionFactory"  resource-adapter-name="jmsra"/>
+    <connector-resource enabled="true" jndi-name="jms/NewCustomerFactory" pool-name="jms/NewCustomerFactoryPool"  />
+    <admin-object-resource enabled="true" jndi-name="jms/NewCustomerOrder"  res-type="javax.jms.Queue"  res-adapter="jmsra">
+        <property name="Name" value="PhysicalQueue"/>
+    </admin-object-resource>
+    <connector-connection-pool name="jms/NewCustomerOrderFactoryPool"  connection-definition-name="javax.jms.QueueConnectionFactory"  resource-adapter-name="jmsra"/>
+    <connector-resource enabled="true" jndi-name="jms/NewCustomerOrderFactory" pool-name="jms/NewCustomerOrderFactoryPool"  />
+    <admin-object-resource enabled="true" jndi-name="jms/NewCustomerOrderLine"  res-type="javax.jms.Queue"  res-adapter="jmsra">
+        <property name="Name" value="PhysicalQueue"/>
+    </admin-object-resource>
+    <connector-connection-pool name="jms/NewCustomerOrderLineFactoryPool"  connection-definition-name="javax.jms.QueueConnectionFactory"  resource-adapter-name="jmsra"/>
+    <connector-resource enabled="true" jndi-name="jms/NewCustomerOrderLineFactory" pool-name="jms/NewCustomerOrderLineFactoryPool"  />
 </resources>
